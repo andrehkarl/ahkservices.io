@@ -822,7 +822,7 @@
             </div>
 
             <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required="">
             </div>
 
             <div class="col-md-12">
@@ -837,7 +837,7 @@
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
-              <button type="submit">Send Message</button>
+              <button type="submit" data-sitekey="6Ld10uYrAAAAAIzGW7IcB2gMPSksMaNteZOgqeJg" data-callback="sendForm" class="btn btn-primary">Send Message</button>
             </div>
             <small class="col-md-13 text-center" style="font-size: x-small">This site is protected by reCAPTCHA and the Google 
                 <a href="https://policies.google.com/privacy">Privacy Policy</a> and
@@ -890,8 +890,29 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <!-- Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Ld10uYrAAAAAIzGW7IcB2gMPSksMaNteZOgqeJg" defer></script>
+
+<script>
+
+    function sendForm() {
+      document.getElementById('contactForm').submit();
+    }
+
+    // Function that loads recaptcha on form input focus
+    function reCaptchaOnFocus() {
+      var head = document.getElementsByTagName('head')[0]
+      var script = document.createElement('script')
+      script.type = 'text/javascript';
+      script.src = 'https://www.google.com/recaptcha/api.js?render=6Ld10uYrAAAAAIzGW7IcB2gMPSksMaNteZOgqeJg'
+      head.appendChild(script);
+
+      // remove focus to avoid js error:
+      document.getElementById('email').removeEventListener('focus', reCaptchaOnFocus)
+    };
+    // add initial event listener to the form inputs
+    document.getElementById('email').addEventListener('focus', reCaptchaOnFocus, false);
+
+  </script>
+
 </body>
 
 </html>
