@@ -1,8 +1,8 @@
 // main: ../main.scss
 /*--------------------------------------------------------------
-# Testimonials Section
+# Customers Section
 --------------------------------------------------------------*/
-.testimonials {
+.customers {
   padding: 80px 0;
   position: relative;
 
@@ -14,7 +14,7 @@
     z-index: 2;
   }
 
-  .testimonials-bg {
+  .customers-bg {
     position: absolute;
     inset: 0;
     display: block;
@@ -29,15 +29,15 @@
     z-index: 3;
   }
 
-  .testimonials-carousel,
-  .testimonials-slider {
+  .customers-carousel,
+  .customers-slider {
     overflow: hidden;
   }
 
-  .testimonial-item {
+  .customer-item {
     text-align: center;
 
-    .testimonial-img {
+    .customer-img {
       width: 100px;
       border-radius: 50%;
       border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
@@ -114,7 +114,7 @@
   }
 
   @media (min-width: 992px) {
-    .testimonial-item p {
+    .customer-item p {
       width: 80%;
     }
   }
