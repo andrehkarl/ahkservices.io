@@ -998,8 +998,8 @@ section,
   cursor: pointer;
   display: inline-block;
   padding: 0;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 400;
   margin: 0 10px;
   line-height: 1;
   margin-bottom: 5px;
@@ -1071,7 +1071,7 @@ section,
   position: absolute;
   left: calc(50% - 40px);
   font-size: 26px;
-  top: calc(50% - 14px);
+  top: calc(10% - 14px);
   color: #fff;
   transition: 0.3s;
   line-height: 1.2;
@@ -1079,11 +1079,11 @@ section,
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: var(--accent-color); 
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
+  left: 90%;
   font-size: 34px;
   line-height: 0;
 }
@@ -1632,4 +1632,19 @@ section,
 
 .grecaptcha-badge { 
     visibility: hidden;
+}
+
+.lazy-image {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease-in-out; /* Add a smooth transition */
+}
+
+.lazy-image.visible {
+  opacity: 1; /* Fully visible when scrolled into view */
+}
+
+/* Optional: Placeholder styling */
+.image-wrapper {
+  min-height: 200px; /* Placeholder height */
+  background-color: #f0f0f0; 
 }
