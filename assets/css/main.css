@@ -474,6 +474,8 @@ h6 {
 }
 
 .footer .copyright {
+  font-size: 13px;
+  text-align: left;
   padding-top: 25px;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
